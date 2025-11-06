@@ -10,7 +10,7 @@ body {
     color: var(--text);
     font-family: sans-serif;
     padding: 12px;
-    max-width: 900px;
+    max-width: 640px;
     margin: auto;
 }
 
