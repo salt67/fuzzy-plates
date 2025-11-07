@@ -96,7 +96,7 @@ function parseTSV(text) {
   const lines = text.trim().split(/\r?\n/);
   const headers = lines[0].split(/\t/).map(h=>h.trim());
   const rows = lines.slice(1);
-  let idx = headers.findIndex(h=>/plate|tag|number/i.test(h));
+  let idx = headers.findIndex(h=>/plate/i.test(h));
   if (idx<0) idx = 0;
 
   const map = new Map();
@@ -121,8 +121,7 @@ function loadUserPlates() {
   let raw = plateInput.value;
   const cleaned = raw
     .split(/\r?\n/)
-    .map(line => line.trim())
-    .filter(line => line !== "")
+    .filter(line => line.trim() !== "")   // keep rows with any real content
     .join("\n");
   plateInput.value = cleaned;
   if (!cleaned) return;

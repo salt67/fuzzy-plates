@@ -95,3 +95,6 @@ summary {
     background: var(--fuzzy-color);
     color: black;
 }
+#loadStatus {
+    margin-bottom: 1em;
+}
